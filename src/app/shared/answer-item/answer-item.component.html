@@ -1,0 +1,15 @@
+<div class="answer" fxLayout="row">
+    <app-votes 
+        [upvotes]="answer.upvotes" 
+        [downvotes]="answer.downvotes"
+        [upvoted]="answer.upvoted" 
+        [downvoted]="answer.downvoted"  
+        (upvote)="upvote($event)" 
+        (downvote)="downvote($event)">
+    </app-votes>
+    <div class="answer-body" fxFlex="100%" fxLayout="column" fxLayoutAlign="center start">
+        <div class="p5">posted by {{ answer.author }} {{ timeDifference(answer.created_at) }}</div>
+        <div class="answer-text">{{ answer.body }}
+        </div>
+    </div>
+</div>

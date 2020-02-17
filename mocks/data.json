@@ -1,0 +1,403 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "author": "azra",
+      "authorId": 1,
+      "body": "If you were building an uplifting music playlist for pulling yourself out of gloom, what songs would you put on it?",
+      "upvotes": 10,
+      "downvotes": 3,
+      "created_at": 1581860917,
+      "answer_count": 1
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "What is the stupidest way you've injured yourself?",
+      "upvotes": 2,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581877692,
+      "id": 11
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "What is a food combo that shouldn't work but tastes really good?",
+      "upvotes": 4,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581878039,
+      "id": 12
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "Most nursery rhymes have a dark meaning behind them, which one blows your mind the most?",
+      "upvotes": 5,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581878168,
+      "id": 13
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "How do you know if your problems are bad enough to see a therapist?",
+      "upvotes": 14,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581878326,
+      "id": 14
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "What were some of the dumbest misconceptions of life you had as a child?",
+      "upvotes": 10,
+      "downvotes": 0,
+      "answer_count": 1,
+      "created_at": 1581879788,
+      "id": 15
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "What movie never should be remade?",
+      "upvotes": 27,
+      "downvotes": 0,
+      "answer_count": 2,
+      "created_at": 1581879902,
+      "id": 16
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "Do you have a narrating voice in your head when reading and thinking?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581899939,
+      "id": 17
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "What do you believe will happen after death?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581899956,
+      "id": 18
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "What would you do if only you knew that tomorrow a meteor hits earth and kills everyone?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581899999,
+      "id": 19
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "What lifehacks to survive in zombie-apocalypse do you know?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581900007,
+      "id": 20
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "What quote did not age well?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581900020,
+      "id": 21
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "What was a stupid fact that you believed for years?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581900032,
+      "id": 22
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "What are you just naturally good at?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581900060,
+      "id": 23
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "Would you watch a show where a billionaire CEO has to go an entire month on their lowest paid employees salary, without access to any other resources than that of the employee? What do you think would happen?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581900140,
+      "id": 24
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "Girls who took notes using 50 different colored pens, where are you now? Do you still continue to write using all those colors?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581900159,
+      "id": 25
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "People who shoved their school papers in their backpack with no binder/folder etc, Where are you now?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581900182,
+      "id": 26
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "What healthy food tastes just as good as unhealthy food?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581900195,
+      "id": 27
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "What's your creepiest \"glitch in the matrix\" or unexplainable thing that's ever happened to you?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581900207,
+      "id": 28
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "People who grew up in third-world countries, what was the biggest shock for you when moving into a developed country?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581900237,
+      "id": 29
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "God is retiring, and asks you to permanently replace him. What is the first thing you do as the new God?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581900251,
+      "id": 30
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "What was the worst thing that you did/said while being angry?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581900292,
+      "id": 31
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "What was a great thing ruined by popularity?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581900329,
+      "id": 32
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "What technology are you shocked has not advanced yet?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581900359,
+      "id": 33
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "Guys who watched a thousand movies, who got so used on all the plots and twist, and seen almost all movie tropes, what recent movies made an impression on you?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581900376,
+      "id": 34
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "People who understand Chinese/Japanese, what's the dumbest thing you've seen tattooed on someone?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581900406,
+      "id": 35
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "What does everyone spend money on that you refuse to spend money on?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581900440,
+      "id": 36
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "A popular saying is \"Nothing is ever lost on the internet\" but what is something you have been searching for years and you haven't found it yet?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581901939,
+      "id": 37
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "People who pile on generic YouTube comments like “Who’s watching in 2019”, why do you do this?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581902129,
+      "id": 38
+    },
+    {
+      "author": null,
+      "authorId": null,
+      "body": "Iceland just announced that every Icelander over the age of 18 automatically become organ donors with ability to opt out. How do you feel about this?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581943665,
+      "id": 39
+    },
+    {
+      "author": null,
+      "authorId": null,
+      "body": "Iceland just announced that every Icelander over the age of 18 automatically become organ donors with ability to opt out. How do you feel about this?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581943960,
+      "id": 40
+    },
+    {
+      "author": null,
+      "authorId": null,
+      "body": "Iceland just announced that every Icelander over the age of 18 automatically become organ donors with ability to opt out. How do you feel about this?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1581944216,
+      "id": 41
+    },
+    {
+      "author": "Edo",
+      "authorId": 2,
+      "body": "Iceland just announced that every Icelander over the age of 18 automatically become organ donors with ability to opt out. How do you feel about this?",
+      "upvotes": 2,
+      "downvotes": 0,
+      "answer_count": 1,
+      "created_at": 1581944705,
+      "id": 42
+    }
+  ],
+  "answers": [
+    {
+      "id": 1,
+      "body": "That all Lyric websites just steal from whichever website uploads the lyrics first. Several websites will share the exact same lyrics with one-another (Not uncommon if they're correct lyrics) but they'll have a word misspelled or misplaced, or the lyrics will just be off entirely.",
+      "upvotes": 2,
+      "downvotes": 1,
+      "created_at": 1581860917,
+      "author": "azra",
+      "questionId": 1
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "Back to the Future.\n\nIt is a staple of 1980s and it can never be replicated",
+      "upvotes": 1,
+      "downvotes": 0,
+      "created_at": 1581887363,
+      "questionId": "16",
+      "id": 2
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "Labyrinth.",
+      "upvotes": 2,
+      "downvotes": 1,
+      "created_at": 1581897360,
+      "questionId": "16",
+      "id": 3
+    },
+    {
+      "author": "azra",
+      "authorId": 1,
+      "body": "ATM gave away money for free – all you need is a card",
+      "upvotes": 0,
+      "downvotes": 0,
+      "created_at": 1581898868,
+      "questionId": "15",
+      "id": 4
+    },
+    {
+      "author": "Edo",
+      "authorId": 2,
+      "body": "Smart idea. If you care enough to not be an organ donor, you can just opt out. This just encreases the pool by adding the folk who don't care. I do believe there should be a clause added for those who could not reasonably be asked to give consent in the first place.",
+      "upvotes": 1,
+      "downvotes": 1,
+      "created_at": 1581944784,
+      "questionId": "42",
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "first_name": "azra",
+      "last_name": "m",
+      "email": "azramah6@gmail.com",
+      "password": "",
+      "answer_count" : 6
+    },
+    {
+      "email": "edo@gmail.com",
+      "password": "12345",
+      "first_name": "Edo",
+      "last_name": "H",
+      "id": 2,
+      "answer_count" : 2
+    }
+  ]
+}

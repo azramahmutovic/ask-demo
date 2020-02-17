@@ -1,0 +1,22 @@
+<app-header></app-header>
+<app-hero-banner>
+    <div class="question-info">
+        <div class="p5">posted by {{ (question$ | async)?.author }} {{ timeDifference((question$ | async)?.created_at) }}</div>
+        <div class="question-text">{{ (question$ | async)?.body }}</div>
+        <div class="p4">{{ questionAnswersCount }} {{ questionAnswersCount === 1 ? 'answer' : 'answers'}}</div>
+    </div>
+    <app-text-input mode="answer" (addAnswer)="addAnswer($event)" buttonText="post" inputLabel="Add your answer"></app-text-input>
+</app-hero-banner>
+<div class="content-container">
+    <div class="content-area">
+        <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="24px">
+            <app-answer-item    
+                [answer]="answer" 
+                *ngFor="let answer of (answers$ | async)"
+                (upvoteAnswer)="upvoteAnswer($event)"
+                (downvoteAnswer)="downvoteAnswer($event)">
+            </app-answer-item>
+            <div *ngIf="questionAnswersCount === 0" class="p5">No answers yet</div>
+        </div>
+    </div>
+  </div>

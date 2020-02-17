@@ -1,0 +1,17 @@
+<div fxLayout="column" fxLayoutAlign="start center">
+    <div fxLayout="row" class="btn-group btn-icon">
+      <button *ngFor="let tab of tabs; let i = index" 
+            fxFlex="1 1 auto"  
+            (click)="selectTab(tab)" 
+            class="btn"
+            [class.active]="tab.active"
+            [class.btn-primary]="tab.active">
+        <!-- <clr-icon [shape]="tab.tabIcon" [title]="tab.tabIcon"></clr-icon> -->
+        <clr-icon [attr.shape]="tab.tabIcon"></clr-icon>
+        {{tab.tabTitle}}
+    </button>
+    </div>
+    <div fxFlex="100%" class="tab-content">
+        <ng-content></ng-content>
+    </div>
+</div>

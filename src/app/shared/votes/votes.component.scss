@@ -1,0 +1,25 @@
+$success: #2e8500;
+$danger: #e02200;
+$gray2: #C2D1D9;
+$gray3: #F2F5F7;
+
+.votes{
+    width: 80px;
+    height: 100%;
+    border-right: 1px solid $gray2;
+    background-color: $gray3;
+
+    .upvote{
+        cursor: pointer;
+        color: $success;
+    }
+
+    .downvote{
+        cursor: pointer;
+        color: $danger;
+    }
+
+    .voted{
+        opacity: 0.5;
+    }
+}

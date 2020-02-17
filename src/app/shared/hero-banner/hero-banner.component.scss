@@ -1,0 +1,13 @@
+$purple: #271335;
+
+.hero{
+    width: 100%;
+    min-height: 330px;
+    background-color: $purple;
+    padding: 24px;
+}
+
+ng-content{
+    width: 100%;
+    height: 100%;
+}

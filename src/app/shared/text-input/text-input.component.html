@@ -1,0 +1,9 @@
+<form [formGroup]="postForm" class="clr-form">
+    <label for="vertical-textarea-basic" class="clr-control-label">{{inputLabel}}</label>
+    <div class="clr-control-container">
+        <textarea formControlName="text" class="clr-textarea"></textarea>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center">
+        <button (click)="post()" class="btn btn-primary">{{buttonText}}</button>
+    </div>
+</form>

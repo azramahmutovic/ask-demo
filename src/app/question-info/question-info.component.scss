@@ -1,0 +1,20 @@
+$gray4: #fafafa;
+
+.question-info{
+    width: 100%;
+    max-width: 900px;
+    padding: .25rem;
+    margin: 24px 0px;
+
+    .p4, .p5{
+        color:$gray4;
+        margin: 0 !important;
+     }
+     
+    .question-text{
+        color:$gray4;
+        font-size: 22px;
+        font-weight: 500;
+    }
+ 
+}

@@ -1,0 +1,53 @@
+<div class="login-wrapper">
+    <form class="login" [formGroup]="registerForm">
+        <section class="title">
+            <h3 class="welcome">ASK</h3>
+        </section>
+        <div class="login-group">
+            <div class="clr-form-control">
+                <label for="firstName" class="clr-control-label">First name</label>
+                <div class="clr-control-container" [class.clr-error]="ctrl('firstName').touched && ctrl('firstName').hasError('required')">
+                  <div class="clr-input-wrapper">
+                    <input type="text" id="firstName" class="clr-input" formControlName="firstName">
+                    <clr-icon *ngIf="ctrl('firstName').touched && ctrl('firstName').hasError('required')" class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                  </div>
+                  <span *ngIf="ctrl('firstName').touched && ctrl('firstName').hasError('required')" class="clr-subtext">This field is required.</span>
+                </div>
+            </div>
+            <div class="clr-form-control">
+                <label for="lastName" class="clr-control-label">Last name</label>
+                <div class="clr-control-container" [class.clr-error]="ctrl('lastName').touched && ctrl('lastName').hasError('required')">
+                  <div class="clr-input-wrapper">
+                    <input type="text" id="lastName" class="clr-input" formControlName="lastName">
+                    <clr-icon *ngIf="ctrl('lastName').touched && ctrl('lastName').hasError('required')" class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                  </div>
+                  <span *ngIf="ctrl('lastName').touched && ctrl('lastName').hasError('required')" class="clr-subtext">This field is required.</span>
+                </div>
+            </div>
+            <div class="clr-form-control">
+                <label for="email" class="clr-control-label">Email</label>
+                <div class="clr-control-container" [class.clr-error]="ctrl('email').touched && (ctrl('email').hasError('required') || ctrl('email').hasError('email'))">
+                  <div class="clr-input-wrapper" >
+                    <input type="text" id="email" class="clr-input" formControlName="email">
+                    <clr-icon *ngIf="ctrl('email').touched && (ctrl('email').hasError('required') || ctrl('email').hasError('email'))" class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                  </div>
+                  <span *ngIf="ctrl('email').touched && ctrl('email').hasError('required')" class="clr-subtext">This field is required.</span>
+                  <span *ngIf="ctrl('email').touched && ctrl('email').hasError('email')" class="clr-subtext">Email is not valid.</span>
+                </div>
+            </div>
+            <div class="clr-form-control">
+                <label for="password" class="clr-control-label">Password</label>
+                <div class="clr-control-container" [class.clr-error]="ctrl('password').touched && (ctrl('password').hasError('required') || ctrl('password').hasError('minlength'))">
+                  <div class="clr-input-wrapper">
+                    <input type="password" id="password" class="clr-input" formControlName="password">
+                    <clr-icon *ngIf="ctrl('password').touched && (ctrl('password').hasError('required') || ctrl('password').hasError('minlength'))" class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                  </div>
+                  <span *ngIf="ctrl('password').touched && ctrl('password').hasError('required')" class="clr-subtext">This field is required.</span>
+                  <span *ngIf="ctrl('password').touched && ctrl('password').hasError('minlength')" class="clr-subtext">Password must have at least 5 characters.</span>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid" (click)="submit()">Create account</button>
+            <span class="signup">Already have an account? <a routerLink="/login">Login</a></span>
+        </div>
+    </form>
+</div>

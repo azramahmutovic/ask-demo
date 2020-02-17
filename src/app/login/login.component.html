@@ -1,0 +1,34 @@
+<div class="login-wrapper">
+    <form class="login" [formGroup]="loginForm">
+        <section class="title">
+            <h3 class="welcome">ASK</h3>
+        </section>
+        <div class="login-group">
+            <div class="clr-form-control">
+                <label for="email" class="clr-control-label">Email</label>
+                <div class="clr-control-container" [class.clr-error]="ctrl('email').touched && ctrl('email').hasError('required')">
+                  <div class="clr-input-wrapper" >
+                    <input type="text" id="email" class="clr-input" formControlName="email">
+                    <clr-icon *ngIf="ctrl('email').touched && ctrl('email').hasError('required')" class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                  </div>
+                  <span *ngIf="ctrl('email').touched && ctrl('email').hasError('required')" class="clr-subtext">This field is required.</span>
+                </div>
+            </div>
+            <div class="clr-form-control">
+                <label for="password" class="clr-control-label">Password</label>
+                <div class="clr-control-container" [class.clr-error]="ctrl('password').touched && ctrl('password').hasError('required')">
+                  <div class="clr-input-wrapper">
+                    <input type="password" id="password" class="clr-input" formControlName="password">
+                    <clr-icon *ngIf="ctrl('password').touched && ctrl('password').hasError('required')" class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                  </div>
+                  <span *ngIf="ctrl('password').touched && ctrl('password').hasError('required')" class="clr-subtext">This field is required.</span>
+                </div>
+            </div>
+            <div *ngIf="(loginFail$ | async)" class="error active">
+                Invalid user name or password
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid" (click)="submit()">Login</button>
+            <span class="signup">Don't have an account? <a routerLink="/signup">Signup</a></span>
+        </div>
+    </form>
+</div>

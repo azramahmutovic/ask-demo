@@ -1,0 +1,47 @@
+<app-header></app-header>
+<app-hero-banner>
+  <h3>This is a place for open-ended, discussion based questions. Ask anything.</h3>
+  <app-text-input mode="question" buttonText="ask" (addQuestion)="addQuestion($event)"></app-text-input>
+</app-hero-banner>
+<div class="content-container">
+  <div class="content-area">
+    <app-tabs>
+      <app-tab tabTitle="new" tabIcon="new">
+        <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="24px">
+          <app-question-item 
+            [question]="question" 
+            *ngFor="let question of (questions$ | async)"
+            (upvoteQuestion)="upvoteQuestion($event)"
+            (downvoteQuestion)="downvoteQuestion($event)">
+          </app-question-item>
+          <button class="btn btn-link" (click)="loadMoreQuestions()">Load more</button>
+        </div>
+      </app-tab>
+      <app-tab tabTitle="hot" tabIcon="flame">
+        <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="24px">
+          <app-question-item 
+              [question]="question" 
+              *ngFor="let question of (hotQuestions$ | async)"
+              (upvoteQuestion)="upvoteHotQuestion($event)"
+              (downvoteQuestion)="downvoteHotQuestion($event)">
+          </app-question-item>
+          <button class="btn btn-link" (click)="loadMoreHotQuestions()">Load more</button>
+        </div>
+      </app-tab>
+      <app-tab tabTitle="community" tabIcon="users">
+        <div fxLayout="row" fxLayoutAlign="center center" class="p2">These are our most active users</div>
+        <div fxLayout="row wrap" fxLayoutAlign="center center">
+          <app-user-card
+            [user]="user" 
+            *ngFor="let user of (activeUsers$ | async)" 
+            fxFlex="25%"
+            fxFlex.xs="100%"
+            fxFlex.sm="50%"
+            fxFlex.md="33%"
+            fxFlex.xl="20%">
+          </app-user-card>
+        </div>
+      </app-tab>
+    </app-tabs>
+  </div>
+</div>

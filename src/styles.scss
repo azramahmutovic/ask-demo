@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+$gray4: #fafafa;
+
+body{
+    background-color: $gray4;
+}
+
+a, a:active, a:focus {
+    cursor: pointer;
+    text-decoration: none;
+    outline: 0;
+}
+
+button:focus {
+    outline:0;
+}

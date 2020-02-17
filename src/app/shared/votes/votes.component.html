@@ -1,0 +1,4 @@
+<div class="votes" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="12px">
+    <div (click)="upvoteClick()" class="upvote" [class.voted]="upvoted" fxLayout="column" fxLayoutAlign="center center"><clr-icon shape="caret up"></clr-icon> {{upvotes}}</div>
+    <div (click)="downvoteClick()" class="downvote" [class.voted]="downvoted" fxLayout="column" fxLayoutAlign="center center"><clr-icon shape="caret down"></clr-icon> {{downvotes}}</div>
+</div>

@@ -1,0 +1,29 @@
+$gray2: #C2D1D9;
+
+:host{
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.question{
+    width: 100%;
+    min-height: 65px;
+    max-width: 900px;
+    border-radius: .125rem;
+    border: 1px solid $gray2;
+
+    .question-body{
+        margin: 12px;
+        cursor: pointer;
+        .p4, .p5{
+            margin: 0 !important;
+         }
+         
+        .question-text{
+             font-size: 16px;
+             font-weight: 600;
+        }
+    }
+}
