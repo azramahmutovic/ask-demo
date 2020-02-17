@@ -154,7 +154,7 @@
       "author": "azra",
       "authorId": 1,
       "body": "Girls who took notes using 50 different colored pens, where are you now? Do you still continue to write using all those colors?",
-      "upvotes": 0,
+      "upvotes": 1,
       "downvotes": 0,
       "answer_count": 0,
       "created_at": 1581900159,
@@ -291,36 +291,6 @@
       "id": 38
     },
     {
-      "author": null,
-      "authorId": null,
-      "body": "Iceland just announced that every Icelander over the age of 18 automatically become organ donors with ability to opt out. How do you feel about this?",
-      "upvotes": 0,
-      "downvotes": 0,
-      "answer_count": 0,
-      "created_at": 1581943665,
-      "id": 39
-    },
-    {
-      "author": null,
-      "authorId": null,
-      "body": "Iceland just announced that every Icelander over the age of 18 automatically become organ donors with ability to opt out. How do you feel about this?",
-      "upvotes": 0,
-      "downvotes": 0,
-      "answer_count": 0,
-      "created_at": 1581943960,
-      "id": 40
-    },
-    {
-      "author": null,
-      "authorId": null,
-      "body": "Iceland just announced that every Icelander over the age of 18 automatically become organ donors with ability to opt out. How do you feel about this?",
-      "upvotes": 0,
-      "downvotes": 0,
-      "answer_count": 0,
-      "created_at": 1581944216,
-      "id": 41
-    },
-    {
       "author": "Edo",
       "authorId": 2,
       "body": "Iceland just announced that every Icelander over the age of 18 automatically become organ donors with ability to opt out. How do you feel about this?",
@@ -389,7 +359,7 @@
       "last_name": "m",
       "email": "azramah6@gmail.com",
       "password": "",
-      "answer_count" : 6
+      "answer_count": 6
     },
     {
       "email": "edo@gmail.com",
@@ -397,7 +367,7 @@
       "first_name": "Edo",
       "last_name": "H",
       "id": 2,
-      "answer_count" : 2
+      "answer_count": 2
     }
   ]
 }
