@@ -3,6 +3,7 @@
   <div class="content-area">
     <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="24px">
         <h3 class="headline">My questions</h3>
+        <div class="headline" *ngIf="(questionCount$ | async) === 0">You haven't asked any questions yet.</div>
         <app-question-item 
           [question]="question" 
           *ngFor="let question of (questions$ | async)"

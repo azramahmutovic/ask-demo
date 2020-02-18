@@ -103,7 +103,7 @@ export function reducer(
 
     }
 
-    case fromAnswers.LOAD_USER_ANSWER_FAIL: {
+    case fromAnswers.LOAD_USER_ANSWER: case fromAnswers.LOAD_USER_ANSWER_FAIL: {
       
       return {
         ...state,

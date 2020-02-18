@@ -32,8 +32,8 @@ export const selectQuestionById = (id) => createSelector(
 );
   
 export const selectQuestionCount = createSelector(
-      selectQuestionIds, 
-      ids => ids.length
+      getQuestionsState, 
+      fromQuestions.selectQuestionCount
 );
 
 export const selectQuestionPage = createSelector(

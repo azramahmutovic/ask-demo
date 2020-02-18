@@ -107,6 +107,7 @@ export class AnswerEffects {
         return this.apiService.loadUserAnswer(action.payload)
             .pipe(
                 map(response => {
+                    console.log(response)
                     if((response as any).length > 0)
                         return new answerActions.LoadUserAnswerSuccess(response[0] as any);
                     else

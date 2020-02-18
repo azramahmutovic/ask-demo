@@ -133,7 +133,8 @@ export function reducer(
       };
     }
 
-    case fromQuestions.GET_QUESTION_COUNT_SUCCESS: case fromQuestions.UPDATE_QUESTION_COUNT_SUCCESS : {
+    case fromQuestions.GET_QUESTION_COUNT_SUCCESS: 
+    case fromQuestions.UPDATE_QUESTION_COUNT_SUCCESS: {
       
       const count = action.payload;
 

@@ -135,7 +135,7 @@ export class QuestionEffects {
         }),
     );
 
-    @Effect({ dispatch: false })
+    @Effect()
 	updateQuestionCount$ = this.actions$.pipe(
         ofType<questionActions.UpdateQuestionCount>(questionActions.UPDATE_QUESTION_COUNT),
         mergeMap(action => {
