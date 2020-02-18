@@ -18,7 +18,7 @@
                 <clr-icon shape="caret down"></clr-icon>
             </button>
             <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-                <a routerLink="/profile" clrDropdownItem>Profile</a>
+                <a [routerLink]="'/profile'" clrDropdownItem>Profile</a>
                 <a [routerLink]="'/my-questions'" clrDropdownItem>My questions</a>
                 <a (click)="logout()" clrDropdownItem>Log out</a>
             </clr-dropdown-menu>

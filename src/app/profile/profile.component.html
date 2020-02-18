@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div class="content-container">
+  <div class="content-area">
+    <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="24px">
+        <h2 class="headline">Profile</h2>
+        <div class="profile-card" fxLayout="row">
+            <div fxHide.xs="true" class="profile-photo" fxLayout="row" fxLayoutAlign="center center"><img src="assets/avatar.svg"></div>
+            <div class="profile-info" fxFlex="100%">
+                <form class="clr-form" [formGroup]="profileForm">
+                    <div class="clr-form-control">
+                        <label for="example" class="clr-control-label">First name</label>
+                        <div fxLayout="row" fxLayoutAlign="start end">
+                            <div class="clr-control-container">
+                                <div class="clr-input-wrapper">
+                                    <input formControlName="first_name" type="text" id="firstName" placeholder="Example Input" class="clr-input">
+                                    <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                                </div>
+                            </div>
+                            <button *ngIf="ctrl('first_name').enabled" class="btn btn-link" (click)="saveChanges('first_name')">Save</button>
+                            <button *ngIf="ctrl('first_name').disabled" class="btn btn-link" (click)="enableInput('first_name')">Edit</button>
+                        </div>
+                    </div>
+                    <div class="clr-form-control">
+                        <label for="example" class="clr-control-label">Last name</label>
+                        <div fxLayout="row" fxLayoutAlign="start end">
+                            <div class="clr-control-container">
+                                <div class="clr-input-wrapper">
+                                    <input formControlName="last_name" type="text" id="lastName" placeholder="Example Input" class="clr-input">
+                                    <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                                </div>
+                            </div>
+                            <button *ngIf="ctrl('last_name').enabled" class="btn btn-link" (click)="saveChanges('last_name')">Save</button>
+                            <button *ngIf="ctrl('last_name').disabled" class="btn btn-link" (click)="enableInput('last_name')">Edit</button>
+                        </div>
+                    </div>
+                    <div class="clr-form-control">
+                        <label for="example" class="clr-control-label">Email</label>
+                        <div fxLayout="row" fxLayoutAlign="start end">
+                            <div class="clr-control-container">
+                                <div class="clr-input-wrapper">
+                                    <input formControlName="email" type="text" id="password" placeholder="Example Input" class="clr-input">
+                                    <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                                </div>
+                            </div>
+                            <button *ngIf="ctrl('email').enabled" class="btn btn-link" (click)="saveChanges('email')">Save</button>
+                            <button *ngIf="ctrl('email').disabled" class="btn btn-link" (click)="enableInput('email')">Edit</button>
+                        </div>
+                    </div>
+                    <div class="clr-form-control">
+                        <label for="example" class="clr-control-label">Password</label>
+                        <button class="btn btn-outline">Change password</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+$gray2: #C2D1D9;
+$gray3: #F2F5F7;
+
+.headline{
+    width: 100%;
+    max-width: 900px;
+}
+
+.profile-card{
+    width: 100%;
+    max-width: 900px;
+    border-radius: .125rem;
+    border: 1px solid $gray2;
+
+    .profile-photo{
+        border-right:  1px solid $gray2;
+        min-width: 200px;
+        min-height: 200px;
+        img{
+            width: 75%;
+            height: 75%;
+        }
+    }
+
+    .profile-info{
+        margin: 12px;
+    }
+}
+
+.clr-control-container{
+    margin: .25rem 0;
+    height: 1.5rem;
+}
+
+.clr-input{
+    min-width: 200px;
+}
+

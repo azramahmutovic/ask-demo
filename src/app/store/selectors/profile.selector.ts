@@ -73,9 +73,10 @@ export const selectProfileInfo = createSelector(
     selectProfileId,
     selectProfileFirstName,
     selectProfileLastName,
+    selectProfileEmail,
     selectProfileAnswerCount,
     selectMyQuestionCount,
-    (id, first_name, last_name, answer_count, question_count) => { 
-        return{ id, first_name, last_name, answer_count, question_count }
+    (id, first_name, last_name, email, answer_count, question_count) => { 
+        return{ id, first_name, last_name, email, answer_count, question_count }
     }  
 );
