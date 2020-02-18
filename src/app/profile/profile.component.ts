@@ -15,6 +15,7 @@ export class ProfileComponent implements OnInit {
   
   profileForm: FormGroup;
   profile: Profile;
+  changePassModal = false;
 
   constructor(private formBuilder: FormBuilder, private store: Store<fromStore.State>) { }
 
@@ -46,6 +47,11 @@ export class ProfileComponent implements OnInit {
       this.ctrl(controlName).disable();
     }
       
+  }
+
+  changePass({ password }){
+    this.store.dispatch(new fromActions.UpdateUser({ id: this.profile.id, password }));
+    this.changePassModal = false;
   }
 
 

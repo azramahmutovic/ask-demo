@@ -1,0 +1,32 @@
+<clr-modal [(clrModalOpen)]="opened" [clrModalClosable]="false">
+    <h3 class="modal-title">Change password</h3>
+    <div class="modal-body">
+        <form class="clr-form" [formGroup]="passForm">
+            <div class="clr-form-control">
+                <label for="password" class="clr-control-label">Old password</label>
+                <div class="clr-control-container" [class.clr-error]="ctrl('old_password').touched && ctrl('old_password').hasError('required')">
+                  <div class="clr-input-wrapper">
+                    <input type="password" id="old_password" class="clr-input" formControlName="old_password">
+                    <clr-icon *ngIf="ctrl('old_password').touched && ctrl('old_password').hasError('required')" class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                  </div>
+                  <span *ngIf="ctrl('old_password').touched && ctrl('old_password').hasError('required')" class="clr-subtext">This field is required.</span>
+                </div>
+            </div>
+            <div class="clr-form-control">
+                <label for="password" class="clr-control-label">New password</label>
+                <div class="clr-control-container" [class.clr-error]="ctrl('password').touched && (ctrl('password').hasError('required') || ctrl('password').hasError('minlength'))">
+                  <div class="clr-input-wrapper">
+                    <input type="password" id="password" class="clr-input" formControlName="password">
+                    <clr-icon *ngIf="ctrl('password').touched && (ctrl('password').hasError('required') || ctrl('password').hasError('minlength'))" class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                  </div>
+                  <span *ngIf="ctrl('password').touched && ctrl('password').hasError('required')" class="clr-subtext">This field is required.</span>
+                  <span *ngIf="ctrl('password').touched && ctrl('password').hasError('minlength')" class="clr-subtext">Password must have at least 5 characters.</span>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="cancel.emit()">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="changePass.emit({ password : ctrl('password').value })" [disabled]="passForm.invalid">Change</button>
+    </div>
+</clr-modal>

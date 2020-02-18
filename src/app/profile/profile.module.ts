@@ -4,6 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { SharedModule } from '../shared/shared.module';
 
 import { ProfileComponent } from './profile.component';
+import { ChangePassModalComponent } from './change-pass-modal/change-pass-modal.component';
 
 const routes : Routes = [{
   path: '', 
@@ -12,7 +13,7 @@ const routes : Routes = [{
 
 
 @NgModule({
-  declarations: [ProfileComponent],
+  declarations: [ProfileComponent, ChangePassModalComponent],
   imports: [
     SharedModule,
     RouterModule.forChild(routes),
