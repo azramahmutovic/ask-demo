@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   questions$ : Observable<Question[]>;
   hotQuestions$ : Observable<Question[]>;
   activeUsers$ : Observable<Profile[]>;
+  loggedIn$ : Observable<boolean>;
   newPage: number;
   hotPage: number;
   author: string;
@@ -31,7 +32,8 @@ export class HomeComponent implements OnInit {
     this.questions$ = this.store$.select(fromStore.selectAllQuestions);
     this.hotQuestions$ = this.store$.select(fromStore.selectAllHotQuestions);
     this.activeUsers$ = this.store$.select(fromStore.selectCommunityProfiles);
-
+    this.loggedIn$ = this.store$.select(fromStore.selectProfileLoggedIn);
+    
     this.store$.select(fromStore.selectQuestionsPage).subscribe(page => this.newPage = page);
     this.store$.select(fromStore.selectQuestionsPage).subscribe(page => this.hotPage = page);
     this.store$.select(fromStore.selectProfileFirstName).subscribe(name => this.author = name);

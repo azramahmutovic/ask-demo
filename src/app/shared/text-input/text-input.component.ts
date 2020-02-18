@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder, AbstractControl, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, AbstractControl, Validators } from '@angular/forms';
+import { Answer } from 'src/app/models/answer.model';
 
 //this component can be used to post both questions and answers,
 //depending on the Input() mode passed
@@ -18,6 +19,7 @@ export class TextInputComponent implements OnInit {
   postForm: FormGroup;
   @Input() buttonText : string;
   @Input() inputLabel : string;
+  @Input() answer : Answer;
   @Input() mode: string;
   @Output() addQuestion : EventEmitter<string> = new EventEmitter<string>();
   @Output() addAnswer : EventEmitter<string> = new EventEmitter<string>();
@@ -35,11 +37,6 @@ export class TextInputComponent implements OnInit {
   }
 
   post(): void {
-    Object.keys(this.postForm.controls).forEach(controlName => { 
-      const control = this.ctrl(controlName);     
-      control.markAsDirty();    
-      control.updateValueAndValidity();
-    });
     if(this.postForm.valid){
       if(this.mode === modes.QUESTION)
         this.addQuestion.emit(this.ctrl('text').value)

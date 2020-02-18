@@ -2,7 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { ApiService } from '../../services/api.service';
 
-import { map, mergeMap, catchError } from 'rxjs/operators';
+import { map, mergeMap, catchError, filter } from 'rxjs/operators';
 
 import * as answerActions from '../actions/answer.action';
 import { of } from 'rxjs';
@@ -43,7 +43,7 @@ export class AnswerEffects {
     );
 
     @Effect()
-    refreshAnswers$ = this.actions$.pipe(
+    refreshAnswersAfterAdd$ = this.actions$.pipe(
         ofType<answerActions.AddAnswerSuccess>(answerActions.ADD_ANSWER_SUCCESS),
         mergeMap(action => {
         return [ new answerActions.LoadAnswers(action.payload.questionId) ]
@@ -51,8 +51,30 @@ export class AnswerEffects {
     );
 
     @Effect()
+    updateAnswer$ = this.actions$.pipe(
+        ofType<answerActions.UpdateAnswer>(answerActions.UPDATE_ANSWER),
+        mergeMap(action => {
+        return this.apiService.updateAnswer(action.payload)
+            .pipe(
+                map(response => {
+                    return new answerActions.UpdateAnswerSuccess(response as any);
+                }),
+                catchError(error => of(new answerActions.UpdateAnswerFail())),
+            );
+        }),
+    );
+
+    @Effect()
+    refreshAnswersAfterUpdate$ = this.actions$.pipe(
+        ofType<answerActions.UpdateAnswerSuccess>(answerActions.UPDATE_ANSWER_SUCCESS),
+        mergeMap(action => {
+        return [ new answerActions.LoadAnswers(action.payload.questionId) ]
+        }),
+    );
+
+    @Effect()
     upvoteAnswer$ = this.actions$.pipe(
-        ofType<answerActions.UpdateAnswer>(answerActions.UPVOTE_ANSWER),
+        ofType<answerActions.UpvoteAnswer>(answerActions.UPVOTE_ANSWER),
         mergeMap(action => {
         return this.apiService.updateAnswer(action.payload)
             .pipe(
@@ -77,5 +99,37 @@ export class AnswerEffects {
             );
         }),
     );
+
+    @Effect()
+    loadUserAnswer$ = this.actions$.pipe(
+        ofType<answerActions.LoadUserAnswer>(answerActions.LOAD_USER_ANSWER),
+        mergeMap(action => {
+        return this.apiService.loadUserAnswer(action.payload)
+            .pipe(
+                map(response => {
+                    if((response as any).length > 0)
+                        return new answerActions.LoadUserAnswerSuccess(response[0] as any);
+                    else
+                        return new answerActions.LoadUserAnswerFail();
+                }),
+                catchError(error => of(new answerActions.LoadUserAnswerFail())),
+            );
+        }),
+    );
+
+    @Effect()
+    deleteAnswer$ = this.actions$.pipe(
+        ofType<answerActions.DeleteAnswer>(answerActions.DELETE_ANSWER),
+        mergeMap(action => {
+        return this.apiService.deleteAnswer(action.payload)
+            .pipe(
+                map(response => {
+                    return new answerActions.DeleteAnswerSuccess(action.payload);
+                }),
+                catchError(error => of(new answerActions.DeleteAnswerFail())),
+            );
+        }),
+    );
+
 
 }

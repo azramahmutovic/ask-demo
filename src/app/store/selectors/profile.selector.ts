@@ -33,6 +33,11 @@ export const selectProfileAnswerCount = createSelector(
     fromProfile.selectProfileAnswerCount
 );
 
+export const selectProfileLoggedIn = createSelector(
+    getProfileState,
+    fromProfile.selectProfileLoggedIn
+);
+
 export const selectProfileLoginFail = createSelector(
     getProfileState,
     fromProfile.selectProfileLoginFail

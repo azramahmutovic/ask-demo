@@ -1,0 +1,21 @@
+<form [formGroup]="editForm" class="clr-form">
+    <label for="vertical-textarea-basic" class="clr-control-label">Your answer is</label>
+    <div class="clr-control-container">
+        <textarea formControlName="text" class="clr-textarea"></textarea>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center">
+        <button *ngIf="!editMode" (click)="openModal()" class="btn btn-danger-outline">
+            <clr-icon shape="trash"></clr-icon>
+            Delete
+        </button>
+        <button *ngIf="!editMode" (click)="enableEditMode()" class="btn btn-primary">
+            <clr-icon shape="pencil"></clr-icon>
+            Edit
+        </button>
+        <button *ngIf="editMode" (click)="save()" class="btn btn-primary">
+            <clr-icon shape="floppy"></clr-icon>
+            Save
+        </button>
+    </div>
+</form>
+<app-delete-answer-modal [opened]="deleteModal" (cancel)="deleteModal = false" (delete)="delete()"></app-delete-answer-modal>

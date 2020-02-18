@@ -14,6 +14,8 @@ import { TabsComponent } from './tabs/tabs.component';
 import { UserCardComponent } from './user-card/user-card.component';
 import { AnswerItemComponent } from './answer-item/answer-item.component';
 import { VotesComponent } from './votes/votes.component';
+import { EditAnswerInputComponent } from './edit-answer-input/edit-answer-input.component';
+import { DeleteAnswerModalComponent } from './delete-answer-modal/delete-answer-modal.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { VotesComponent } from './votes/votes.component';
     UserCardComponent, 
     AnswerItemComponent, 
     VotesComponent,
+    EditAnswerInputComponent,
+    DeleteAnswerModalComponent,
     
   ],
   imports: [
@@ -49,7 +53,8 @@ import { VotesComponent } from './votes/votes.component';
     TabComponent,
     TabsComponent,
     UserCardComponent,
-    AnswerItemComponent
+    AnswerItemComponent,
+    EditAnswerInputComponent
   ]
 })
 export class SharedModule { }

@@ -276,7 +276,7 @@
       "body": "A popular saying is \"Nothing is ever lost on the internet\" but what is something you have been searching for years and you haven't found it yet?",
       "upvotes": 0,
       "downvotes": 0,
-      "answer_count": 0,
+      "answer_count": 1,
       "created_at": 1581901939,
       "id": 37
     },
@@ -284,7 +284,7 @@
       "author": "azra",
       "authorId": 1,
       "body": "People who pile on generic YouTube comments like “Who’s watching in 2019”, why do you do this?",
-      "upvotes": 0,
+      "upvotes": 1,
       "downvotes": 0,
       "answer_count": 0,
       "created_at": 1581902129,
@@ -344,8 +344,8 @@
     {
       "author": "Edo",
       "authorId": 2,
-      "body": "Smart idea. If you care enough to not be an organ donor, you can just opt out. This just encreases the pool by adding the folk who don't care. I do believe there should be a clause added for those who could not reasonably be asked to give consent in the first place.",
-      "upvotes": 1,
+      "body": "Smart idea. If you care enough to not be an organ donor, you can just opt out. This just increases the pool by adding the folk who don't care. I do believe there should be a clause added for those who could not reasonably be asked to give consent in the first place.",
+      "upvotes": 2,
       "downvotes": 1,
       "created_at": 1581944784,
       "questionId": "42",
@@ -368,6 +368,14 @@
       "last_name": "H",
       "id": 2,
       "answer_count": 2
+    },
+    {
+      "email": "marina@gmail.com",
+      "password": "password",
+      "first_name": "Marina",
+      "last_name": "Z",
+      "answer_count": 0,
+      "id": 3
     }
   ]
 }

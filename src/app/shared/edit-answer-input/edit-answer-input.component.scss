@@ -1,0 +1,27 @@
+$gray4: #fafafa;
+
+:host{
+    width: 100%;
+    max-width: 900px;
+}
+
+.clr-form{
+    padding: 0;
+}
+
+.clr-control-container,
+.clr-textarea{
+    width: 100%;
+}
+
+.clr-textarea{
+    resize: none;
+    min-height: 150px;
+    &:disabled {
+        opacity: 0.9;
+    }
+}
+
+label{
+    color: $gray4;
+}

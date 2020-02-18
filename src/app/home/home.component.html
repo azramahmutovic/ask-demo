@@ -1,7 +1,7 @@
 <app-header></app-header>
 <app-hero-banner>
   <h3>This is a place for open-ended, discussion based questions. Ask anything.</h3>
-  <app-text-input mode="question" buttonText="ask" (addQuestion)="addQuestion($event)"></app-text-input>
+  <app-text-input *ngIf="(loggedIn$ | async)" mode="question" buttonText="ask" (addQuestion)="addQuestion($event)"></app-text-input>
 </app-hero-banner>
 <div class="content-container">
   <div class="content-area">

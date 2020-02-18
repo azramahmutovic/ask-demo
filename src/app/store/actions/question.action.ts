@@ -58,7 +58,7 @@ export class LoadQuestionsFail implements Action {
 
 export class LoadQuestion implements Action {
   readonly type = LOAD_QUESTION;
-  constructor(public payload: number | string) {}
+  constructor(public payload: number) {}
 }
 
 export class LoadQuestionSuccess implements Action {

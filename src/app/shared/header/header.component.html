@@ -4,7 +4,11 @@
             <span class="title">ASK</span>
         </a>
     </div>
-    <div class="header-actions">
+    <div *ngIf="!(loggedIn$ | async)" class="header-actions" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="6px">
+        <button [routerLink]="'/login'" class="btn btn-link btn-inverse">Login</button>
+        <button [routerLink]="'/signup'" class="btn btn-inverse">Signup</button>
+    </div>
+    <div *ngIf="(loggedIn$ | async)" class="header-actions">
         <a href="..." class="nav-link nav-icon" aria-label="settings">
             <clr-icon shape="bell"></clr-icon>
         </a>

@@ -1,0 +1,10 @@
+<clr-modal [(clrModalOpen)]="opened">
+    <h3 class="modal-title">Delete answer</h3>
+    <div class="modal-body">
+        <p>Are you sure you want to delete your answer? This action is permanent.</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="cancel.emit()">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="delete.emit()">Delete</button>
+    </div>
+</clr-modal>

@@ -74,7 +74,6 @@ export function reducer(
     }
 
     case fromProfile.SIGNUP_FAIL: {
-      console.log('signup fail')
       return {
         ...state,
         loggingIn: false,
@@ -111,4 +110,5 @@ export const selectProfileEmail = (state: State) => state.email;
 export const selectProfileFirstName = (state: State) => state.first_name;
 export const selectProfileLastName = (state: State) => state.last_name;
 export const selectProfileAnswerCount = (state: State) => state.answer_count;
+export const selectProfileLoggedIn = (state: State) => state.loggedIn;
 export const selectProfileLoginFail = (state: State) => state.loginFail;

@@ -10,6 +10,6 @@
     <div (click)="goToQuestionInfo()" class="question-body" fxFlex="100%" fxLayout="column" fxLayoutAlign="center start">
         <div class="p5">posted by {{ question.author }} {{ timeDifference(question.created_at) }}</div>
         <div class="question-text">{{ question.body }}</div>
-        <div class="p4">{{ question.answer_count }} {{ question.answer_count === 1 ? 'answer' : 'answers'}}</div>
+        <div class="p4 answer-count">{{ question.answer_count }} {{ question.answer_count === 1 ? 'answer' : 'answers'}}</div>
     </div>
 </div>

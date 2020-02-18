@@ -5,7 +5,19 @@
         <div class="question-text">{{ (question$ | async)?.body }}</div>
         <div class="p4">{{ questionAnswersCount }} {{ questionAnswersCount === 1 ? 'answer' : 'answers'}}</div>
     </div>
-    <app-text-input mode="answer" (addAnswer)="addAnswer($event)" buttonText="post" inputLabel="Add your answer"></app-text-input>
+    <app-text-input 
+        *ngIf="(loggedIn$ | async) && !(questionAnswered$ | async)" 
+        mode="answer" 
+        (addAnswer)="addAnswer($event)" 
+        buttonText="post" 
+        inputLabel="Add your answer">
+    </app-text-input>
+    <app-edit-answer-input
+        *ngIf="(loggedIn$ | async) && (questionAnswered$ | async)"
+        [answer]="(userAnswer$ | async)"
+        (editAnswer)="editAnswer($event)"
+        (deleteAnswer)="deleteAnswer($event)" >
+    </app-edit-answer-input>
 </app-hero-banner>
 <div class="content-container">
     <div class="content-area">

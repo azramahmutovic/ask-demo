@@ -16,7 +16,6 @@ $gray2: #C2D1D9;
 
     .question-body{
         margin: 12px;
-        cursor: pointer;
         .p4, .p5{
             margin: 0 !important;
          }
@@ -24,6 +23,11 @@ $gray2: #C2D1D9;
         .question-text{
              font-size: 16px;
              font-weight: 600;
+             cursor: pointer;
+        }
+
+        .answer-count{
+            cursor: pointer;
         }
     }
 }

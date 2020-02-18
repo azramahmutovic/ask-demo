@@ -72,6 +72,12 @@ export class ApiService {
       .pipe(catchError((error: any) => Observable.throw(error)));
   }
 
+  deleteAnswer(id) {
+    return this.http
+      .delete(API + `/answers/${id}`)
+      .pipe(catchError((error: any) => Observable.throw(error)));
+  }
+
   postUser(body){
     return this.http
       .post(API + `/users`, body)
@@ -92,7 +98,13 @@ export class ApiService {
 
   updateUser(user){
     return this.http
-      .patch(API + `/users/${user.id}_page=1&_limit=20`, user)
+      .patch(API + `/users/${user.id}`, user)
+      .pipe(catchError((error: any) => Observable.throw(error)));
+  }
+
+  loadUserAnswer({ userId, questionId }){
+    return this.http
+      .get(API + `/answers?authorId=${userId}&questionId=${questionId}`)
       .pipe(catchError((error: any) => Observable.throw(error)));
   }
 

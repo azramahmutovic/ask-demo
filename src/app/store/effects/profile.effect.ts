@@ -50,7 +50,7 @@ export class ProfileEffects {
             .pipe(
                 map(response => {
                     if((response as any).length === 1){
-                        localStorage.setItem('currentUser', JSON.stringify(response));
+                        localStorage.setItem('currentUser', JSON.stringify(response[0]));
                         this.router.navigate(['/']);
                         return new profileActions.LoginSuccess(response[0] as any);
                     }

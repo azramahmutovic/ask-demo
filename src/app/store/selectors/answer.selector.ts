@@ -1,32 +1,3 @@
-// import {
-//     createSelector,
-//     createFeatureSelector,
-//   } from '@ngrx/store';
-//   import * as fromAnswer from '../reducers/answer.reducer';
-   
-//   export const selectAnswersState = createFeatureSelector<fromAnswer.State>('answers');
-
-//   export const selectAnswerEntities = createSelector(
-//     selectAnswersState,
-//     fromAnswer.selectAnswerEntities
-//   );  
-   
-//   export const selectAllAnswers = createSelector(
-//     selectAnswersState,
-//     fromAnswer.selectAllAnswers
-//   );
-
-//   export const selectAnswersTotal = createSelector(
-//     selectAnswersState,
-//     fromAnswer.selectAnswersTotal
-//   );
-
-//   export const selectAnswerById = (id) => createSelector(
-//     selectAnswerEntities,
-//     (entities) => entities[id]
-//   );
-
-
 import {createSelector} from '@ngrx/store';
 
 import * as fromFeature from '../reducers';
@@ -61,4 +32,14 @@ export const selectAnswerById = (id) => createSelector(
 export const selectAnswersTotal = createSelector(
     selectAnswerIds, 
     ids => ids.length
+);
+
+export const selectUserAnswer = createSelector(
+  getAnswersState,
+  fromAnswers.selectUserAnswer
+);
+
+export const selectQuestionAnswered = createSelector(
+  getAnswersState,
+  fromAnswers.selectQuestionAnswered
 );
