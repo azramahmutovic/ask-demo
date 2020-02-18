@@ -20,6 +20,14 @@ export function reducer(
   action: fromAnswers.AnswerActions
 ): State {
   switch (action.type) {
+
+    case fromAnswers.LOAD_ANSWERS : {
+      return {
+        ...state,
+        ids : [],
+        entities : {},
+      };
+    }
     
     case fromAnswers.LOAD_ANSWERS_SUCCESS: {
       
