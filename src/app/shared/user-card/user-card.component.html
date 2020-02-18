@@ -1,5 +1,6 @@
 <div class="user-card" fxLayout="column" fxLayoutAlign="center center">
     <div class="user-avatar"><img src="assets/avatar.svg"></div>
     <div class="user-name">{{ user?.first_name }} {{ user?.last_name }}</div>
-    <div class="p4">{{ user?.answer_count }} {{ user?.answer_count === 1 ? 'answer' : 'answers' }}</div>
+    <div class="p2">{{ user?.answer_count }} {{ user?.answer_count === 1 ? 'answer' : 'answers' }}</div>
+    <div class="p5">{{ user?.question_count }} {{ user?.question_count === 1 ? 'question' : 'questions' }}</div>
 </div>

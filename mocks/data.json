@@ -409,6 +409,7 @@
       "password": "password",
       "first_name": "Marina",
       "last_name": "Z",
+      "question_count": 0,
       "answer_count": 0,
       "id": 3
     },
@@ -420,6 +421,15 @@
       "answer_count": 0,
       "question_count": 0,
       "id": 4
+    },
+    {
+      "email": "nejla@gmail.com",
+      "password": "12345",
+      "first_name": "Nejla",
+      "last_name": "M",
+      "answer_count": 0,
+      "question_count": 0,
+      "id": 5
     }
   ]
 }
