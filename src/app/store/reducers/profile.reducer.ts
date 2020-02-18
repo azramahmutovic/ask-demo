@@ -1,4 +1,5 @@
 import * as fromProfile from '../actions/profile.action';
+import { Question } from 'src/app/models/question.model';
 
 export interface State {
   id: number;
@@ -6,9 +7,13 @@ export interface State {
   first_name: string,
   last_name: string,
   answer_count: number;
+  question_count: number;
   loggingIn?: boolean;
   loggedIn?: boolean;
   loginFail?: boolean;
+  myQuestionEntities: { [id: string]: Question };
+  myQuestionIds: number[];
+  myQuestionPage: number;
 }
 
 export const initialState: State = {
@@ -17,9 +22,13 @@ export const initialState: State = {
   first_name: null,
   last_name: null,
   answer_count: null,
+  question_count: null,
   loggingIn: false,
   loggedIn: localStorage.getItem('currentUser') ? true : false,
-  loginFail: false
+  loginFail: false,
+  myQuestionEntities: {},
+  myQuestionIds: [],
+  myQuestionPage : 1
 };
 
 export function reducer(
@@ -99,7 +108,34 @@ export function reducer(
       };
     }
 
+    case fromProfile.LOAD_MY_QUESTIONS_SUCCESS: {
+      
+      const questions = action.payload;
+      const myQuestionIds = questions.map(question => question.id);
+      
+      const myQuestionEntities = questions.reduce(
+        (entities: { [id: string]: Question }, question: Question) => {
+          return {
+            ...entities,
+            [question.id]: question,
+          };
+        },
+        {
+          ...state.myQuestionEntities,
+        }
+      );
+
+      return {
+        ...state,
+        myQuestionPage: 1,
+        myQuestionIds,
+        myQuestionEntities,
+      };
+    }
+
   }
+
+  
 
   return state;
 }
@@ -112,3 +148,7 @@ export const selectProfileLastName = (state: State) => state.last_name;
 export const selectProfileAnswerCount = (state: State) => state.answer_count;
 export const selectProfileLoggedIn = (state: State) => state.loggedIn;
 export const selectProfileLoginFail = (state: State) => state.loginFail;
+export const selectMyQuestionEntities = (state: State) => state.myQuestionEntities;
+export const selectMyQuestionIds = (state: State) => state.myQuestionIds;
+export const selectMyQuestionPage = (state: State) => state.myQuestionPage;
+export const selectMyQuestionCount = (state: State) => state.question_count;

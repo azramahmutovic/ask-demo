@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div class="content-container">
+  <div class="content-area">
+    <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="24px">
+        <h3 class="headline">My questions</h3>
+        <app-question-item 
+          [question]="question" 
+          *ngFor="let question of (questions$ | async)"
+          (upvoteQuestion)="upvoteQuestion($event)"
+          (downvoteQuestion)="downvoteQuestion($event)">
+        </app-question-item>
+        <button *ngIf="(questionCount$ | async) >= (questionsPage$ | async) * 20" class="btn btn-link" (click)="loadMoreQuestions()">Load more</button>
+  </div>
+</div>

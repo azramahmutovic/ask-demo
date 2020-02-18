@@ -29,11 +29,6 @@ export const selectAnswerById = (id) => createSelector(
     entities => entities[id]
 );
 
-export const selectAnswersTotal = createSelector(
-    selectAnswerIds, 
-    ids => ids.length
-);
-
 export const selectUserAnswer = createSelector(
   getAnswersState,
   fromAnswers.selectUserAnswer
@@ -42,4 +37,9 @@ export const selectUserAnswer = createSelector(
 export const selectQuestionAnswered = createSelector(
   getAnswersState,
   fromAnswers.selectQuestionAnswered
+);
+
+export const selectAnswerLoading = createSelector(
+  getAnswersState,
+  fromAnswers.selectAnswerLoading
 );

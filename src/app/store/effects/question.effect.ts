@@ -120,4 +120,18 @@ export class QuestionEffects {
         }),
     );
 
+    @Effect()
+    getQuestionCount$ = this.actions$.pipe(
+        ofType<questionActions.GetQuestionCount>(questionActions.GET_QUESTION_COUNT),
+        mergeMap(() => {
+        return this.apiService.getQuestionCount()
+            .pipe(
+                map(response => {
+                    return new questionActions.GetQuestionCountSuccess( (response as any).questions);
+                }),
+                catchError(error => of(new questionActions.GetQuestionCountFail())),
+            );
+        }),
+    );
+
 }

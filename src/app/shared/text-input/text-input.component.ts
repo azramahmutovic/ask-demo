@@ -28,7 +28,7 @@ export class TextInputComponent implements OnInit {
 
   ngOnInit(): void {
     this.postForm = this.formBuilder.group({
-      text: [ '', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(600)])],
+      text: [ '', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(600)])],
     })
   }
 

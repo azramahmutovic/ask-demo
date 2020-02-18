@@ -34,7 +34,8 @@ export class SignupComponent implements OnInit {
       password: this.ctrl('password').value, 
       first_name: this.ctrl('firstName').value,
       last_name: this.ctrl('lastName').value,
-      answer_count: 0
+      answer_count: 0,
+      question_count: 0
     }));
   }
 

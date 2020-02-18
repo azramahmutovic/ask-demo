@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as fromStore from '../store';
 import * as fromActions from '../store/actions';
-import { Observable, from } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Question } from '../models/question.model';
 import { Profile } from '../models/profile.model';
 
@@ -19,12 +19,13 @@ export class HomeComponent implements OnInit {
   loggedIn$ : Observable<boolean>;
   newPage: number;
   hotPage: number;
-  author: string;
-  authorId: number;
+  profile : Profile;
+  questionCount: number;
 
   constructor(private store$: Store<fromStore.State>) { }
 
   ngOnInit(): void {
+    this.store$.dispatch(new fromActions.GetQuestionCount());
     this.store$.dispatch(new fromActions.LoadQuestions());
     this.store$.dispatch(new fromActions.LoadHotQuestions());
     this.store$.dispatch(new fromActions.LoadActiveUsers());
@@ -34,16 +35,16 @@ export class HomeComponent implements OnInit {
     this.activeUsers$ = this.store$.select(fromStore.selectCommunityProfiles);
     this.loggedIn$ = this.store$.select(fromStore.selectProfileLoggedIn);
     
-    this.store$.select(fromStore.selectQuestionsPage).subscribe(page => this.newPage = page);
-    this.store$.select(fromStore.selectQuestionsPage).subscribe(page => this.hotPage = page);
-    this.store$.select(fromStore.selectProfileFirstName).subscribe(name => this.author = name);
-    this.store$.select(fromStore.selectProfileId).subscribe(id => this.authorId = id);
+    this.store$.select(fromStore.selectQuestionPage).subscribe(page => this.newPage = page);
+    this.store$.select(fromStore.selectHotQuestionPage).subscribe(page => this.hotPage = page);
+    this.store$.select(fromStore.selectProfileInfo).subscribe(profile => this.profile = profile);
+    this.store$.select(fromStore.selectQuestionCount).subscribe(count => this.questionCount = count);
   }
 
   addQuestion(body){
     const question = {
-      author : this.author,
-      authorId : this.authorId,
+      author : this.profile.first_name,
+      authorId : this.profile.id,
       body: body,
       upvotes: 0,
       downvotes: 0,
@@ -51,6 +52,7 @@ export class HomeComponent implements OnInit {
       created_at : Math.floor(Date.now() /1000)
     }
     this.store$.dispatch(new fromActions.AddQuestion(question))
+    this.store$.dispatch(new fromActions.UpdateUser({ id: this.profile.id, question_count: this.profile.question_count + 1 }))
   }
 
   upvoteQuestion({ id, upvotes }){

@@ -37,6 +37,7 @@ export function reducer(
       );
 
       return {
+        ...state,
         page: 1,
         ids,
         entities,

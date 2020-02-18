@@ -42,3 +42,40 @@ export const selectProfileLoginFail = createSelector(
     getProfileState,
     fromProfile.selectProfileLoginFail
 );
+
+export const selectMyQuestionEntities = createSelector(
+    getProfileState,
+    fromProfile.selectMyQuestionEntities
+);
+  
+export const selectMyQuestionIds = createSelector(
+    getProfileState,
+    fromProfile.selectMyQuestionIds
+);
+  
+export const selectMyQuestions = createSelector(
+    selectMyQuestionEntities, 
+    selectMyQuestionIds,
+    (entities, ids) => ids.map(id => entities[id])
+);
+
+export const selectMyQuestionPage = createSelector(
+    getProfileState,
+    fromProfile.selectMyQuestionPage
+);
+
+export const selectMyQuestionCount = createSelector(
+    getProfileState,
+    fromProfile.selectMyQuestionCount
+);
+
+export const selectProfileInfo = createSelector(
+    selectProfileId,
+    selectProfileFirstName,
+    selectProfileLastName,
+    selectProfileAnswerCount,
+    selectMyQuestionCount,
+    (id, first_name, last_name, answer_count, question_count) => { 
+        return{ id, first_name, last_name, answer_count, question_count }
+    }  
+);

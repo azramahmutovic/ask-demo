@@ -1,8 +1,12 @@
 <form [formGroup]="postForm" class="clr-form">
     <label for="vertical-textarea-basic" class="clr-control-label">{{inputLabel}}</label>
-    <div class="clr-control-container">
-        <textarea formControlName="text" class="clr-textarea"></textarea>
+    <div class="clr-control-container" [class.clr-error]="ctrl('text').touched && (ctrl('text').hasError('minlength') || ctrl('text').hasError('maxlength'))">
+        <div class="clr-textarea-wrapper">
+            <textarea formControlName="text" class="clr-textarea"></textarea>
+        </div>
     </div>
+    <span *ngIf="ctrl('text').touched && ctrl('text').hasError('maxlength')" class="clr-subtext">You'll have to write a shorter post (< 600 characters).</span>
+    <span *ngIf="ctrl('text').touched && ctrl('text').hasError('minlength')" class="clr-subtext">You'll have to write a longer post (> 3 characters).</span>
     <div fxLayout="row" fxLayoutAlign="end center">
         <button (click)="post()" class="btn btn-primary">{{buttonText}}</button>
     </div>

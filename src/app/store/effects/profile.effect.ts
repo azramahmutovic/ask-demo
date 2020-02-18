@@ -78,5 +78,19 @@ export class ProfileEffects {
         }),
     );
 
+    @Effect()
+    loadMyQuestions$ = this.actions$.pipe(
+        ofType<profileActions.LoadMyQuestions>(profileActions.LOAD_MY_QUESTIONS),
+        mergeMap(action => {
+        return this.apiService.loadMyQuestions(action.payload)
+            .pipe(
+                map(response => {
+                    return new profileActions.LoadMyQuestionsSuccess( (response as any));
+                }),
+                catchError(error => of(new profileActions.LoadMyQuestionsFail())),
+            );
+        }),
+    );
+
 
 }

@@ -1,4 +1,7 @@
 {
+  "count": {
+    "questions": 31
+  },
   "questions": [
     {
       "id": 1,
@@ -299,6 +302,16 @@
       "answer_count": 1,
       "created_at": 1581944705,
       "id": 42
+    },
+    {
+      "author": "Edo",
+      "authorId": 2,
+      "body": "You can add one inch to anything that exists. How do you cause the most chaos?",
+      "upvotes": 1,
+      "downvotes": 0,
+      "answer_count": 1,
+      "created_at": 1582028141,
+      "id": 43
     }
   ],
   "answers": [
@@ -350,6 +363,26 @@
       "created_at": 1581944784,
       "questionId": "42",
       "id": 5
+    },
+    {
+      "author": "Edo",
+      "authorId": 2,
+      "body": "That one recipe",
+      "upvotes": 0,
+      "downvotes": 0,
+      "created_at": 1582018648,
+      "questionId": 37,
+      "id": 6
+    },
+    {
+      "author": "Edo",
+      "authorId": 2,
+      "body": "Add one inch to only one leg on every chair",
+      "upvotes": 0,
+      "downvotes": 0,
+      "created_at": 1582032916,
+      "questionId": 43,
+      "id": 7
     }
   ],
   "users": [
@@ -358,8 +391,9 @@
       "first_name": "azra",
       "last_name": "m",
       "email": "azramah6@gmail.com",
-      "password": "",
-      "answer_count": 6
+      "password": "12345",
+      "answer_count": 6,
+      "question_count": 2
     },
     {
       "email": "edo@gmail.com",
@@ -367,7 +401,8 @@
       "first_name": "Edo",
       "last_name": "H",
       "id": 2,
-      "answer_count": 2
+      "answer_count": 4,
+      "question_count": 1
     },
     {
       "email": "marina@gmail.com",

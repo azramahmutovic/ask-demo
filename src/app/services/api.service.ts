@@ -9,7 +9,7 @@ const API = '/api';
   providedIn: 'root'
 })
 export class ApiService {
-
+  
   constructor(private http: HttpClient) { }
 
   loadQuestion(id){
@@ -107,5 +107,18 @@ export class ApiService {
       .get(API + `/answers?authorId=${userId}&questionId=${questionId}`)
       .pipe(catchError((error: any) => Observable.throw(error)));
   }
+
+  loadMyQuestions(userId){
+    return this.http
+      .get(API + `/questions?authorId=${userId}&_sort=created_at&_order=desc&_page=1&_limit=20`)
+      .pipe(catchError((error: any) => Observable.throw(error)));
+  }
+
+  getQuestionCount() {
+    return this.http
+      .get(API + `/count`)
+      .pipe(catchError((error: any) => Observable.throw(error)));
+  }
+
 
 }

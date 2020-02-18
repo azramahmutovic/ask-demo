@@ -1,4 +1,5 @@
 $gray4: #fafafa;
+$danger: #e02200;
 
 :host{
     width: 100%;
@@ -21,4 +22,8 @@ $gray4: #fafafa;
 
 label{
     color: $gray4;
+}
+
+.clr-subtext{
+    color: $danger;
 }

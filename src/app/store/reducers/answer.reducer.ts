@@ -6,13 +6,15 @@ export interface State {
   ids: number[];
   selectedAnswer: Answer;
   questionAnswered: boolean;
+  loading: boolean;
 }
 
 export const initialState: State = {
   entities: {},
   ids: [],
   selectedAnswer: null,
-  questionAnswered: false
+  questionAnswered: false,
+  loading: false
 };
 
 export function reducer(
@@ -26,6 +28,7 @@ export function reducer(
         ...state,
         ids : [],
         entities : {},
+        loading: true
       };
     }
     
@@ -50,6 +53,15 @@ export function reducer(
         ...state,
         ids,
         entities,
+        loading: false
+      };
+    }
+
+    case fromAnswers.LOAD_ANSWERS_FAIL: {
+      
+      return {
+        ...state,
+        loading: false
       };
     }
 
@@ -155,3 +167,4 @@ export const selectAnswerEntities = (state: State) => state.entities;
 export const selectAnswerIds = (state: State) => state.ids;
 export const selectUserAnswer = (state: State) => state.selectedAnswer;
 export const selectQuestionAnswered = (state: State) => state.questionAnswered;
+export const selectAnswerLoading = (state: State) => state.loading;

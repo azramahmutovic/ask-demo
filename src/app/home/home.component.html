@@ -14,7 +14,7 @@
             (upvoteQuestion)="upvoteQuestion($event)"
             (downvoteQuestion)="downvoteQuestion($event)">
           </app-question-item>
-          <button class="btn btn-link" (click)="loadMoreQuestions()">Load more</button>
+          <button *ngIf="questionCount >= newPage * 20"  class="btn btn-link" (click)="loadMoreQuestions()">Load more</button>
         </div>
       </app-tab>
       <app-tab tabTitle="hot" tabIcon="flame">
@@ -25,7 +25,7 @@
               (upvoteQuestion)="upvoteHotQuestion($event)"
               (downvoteQuestion)="downvoteHotQuestion($event)">
           </app-question-item>
-          <button class="btn btn-link" (click)="loadMoreHotQuestions()">Load more</button>
+          <button *ngIf="questionCount >= hotPage * 20" class="btn btn-link" (click)="loadMoreHotQuestions()">Load more</button>
         </div>
       </app-tab>
       <app-tab tabTitle="community" tabIcon="users">

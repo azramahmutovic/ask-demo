@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
 import { Profile } from '../../models/profile.model';
+import { Question } from 'src/app/models/question.model';
 
 export const SIGNUP = 'SIGNUP';
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
@@ -11,6 +12,9 @@ export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const UPDATE_USER = 'UPDATE_USER';
 export const UPDATE_USER_SUCCESS = 'UPDATE_USER_SUCCESS';
 export const UPDATE_USER_FAIL = 'UPDATE_USER_FAIL';
+export const LOAD_MY_QUESTIONS = 'LOAD_MY_QUESTIONS';
+export const LOAD_MY_QUESTIONS_SUCCESS = 'LOAD_MY_QUESTIONS_SUCCESS';
+export const LOAD_MY_QUESTIONS_FAIL = 'LOAD_MY_QUESTIONS_FAIL';
 
 export class Login implements Action {
     readonly type = LOGIN;
@@ -65,6 +69,22 @@ export class UpdateUserFail implements Action {
     constructor() {}
 }
 
+export class LoadMyQuestions implements Action {
+    readonly type = LOAD_MY_QUESTIONS;
+    constructor(public payload: number) {}
+  }
+  
+  export class LoadMyQuestionsSuccess implements Action {
+    readonly type = LOAD_MY_QUESTIONS_SUCCESS;
+    constructor(public payload: Question[]) {}
+  }
+  
+  export class LoadMyQuestionsFail implements Action {
+    readonly type = LOAD_MY_QUESTIONS_FAIL;
+    constructor() {}
+  }
+  
+
 
 export type ProfileAction = 
     | Login
@@ -76,4 +96,7 @@ export type ProfileAction =
     | LogOut
     | UpdateUser
     | UpdateUserSuccess
-    | UpdateUserFail;
+    | UpdateUserFail
+    | LoadMyQuestions 
+    | LoadMyQuestionsSuccess 
+    | LoadMyQuestionsFail;

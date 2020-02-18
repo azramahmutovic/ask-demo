@@ -10,5 +10,9 @@
     "/api/users": {
         "target": "http://localhost:3000",
         "secure": false
+    },
+    "/api/count": {
+        "target": "http://localhost:3000",
+        "secure": false
     }
 }

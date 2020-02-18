@@ -30,12 +30,12 @@ export const selectHotQuestionById = (id) => createSelector(
     entities => entities[id]
 );
 
-export const selectHotQuestionsTotal = createSelector(
+export const selectHotQuestionCount = createSelector(
     selectHotQuestionIds, 
     ids => ids.length
 );
 
-export const selectHotQuestionsPage = createSelector(
+export const selectHotQuestionPage = createSelector(
     getHotQuestionsState, 
   fromQuestions.selectHotQuestionPage
 );

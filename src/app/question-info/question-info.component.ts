@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { Question } from '../models/question.model';
 import { Answer } from '../models/answer.model';
 import { timeDifference } from '../utils/time-diff';
+import { Profile } from '../models/profile.model';
 
 @Component({
   selector: 'app-question-info',
@@ -19,13 +20,13 @@ export class QuestionInfoComponent implements OnInit {
   questionId: number;
   question$ : Observable<Question>;
   answers$ : Observable<Answer[]>;
+  answersLoading$ : Observable<boolean>;
   loggedIn$ : Observable<boolean>;
   questionAnswered$: Observable<boolean>;
   userAnswer$: Observable<Answer>;
   questionAnswersCount : number;
-  author: string;
-  authorId: number;
-  authorAnswersCount : number;
+  profile: Profile;
+  
 
   constructor(private route: ActivatedRoute, private store$: Store<fromStore.State>) { }
 
@@ -37,25 +38,25 @@ export class QuestionInfoComponent implements OnInit {
     
     this.question$ = this.store$.select(fromStore.selectQuestionById(this.questionId));
     this.answers$ = this.store$.select(fromStore.selectAllAnswers);
+    this.answersLoading$ = this.store$.select(fromStore.selectAnswerLoading);
     this.loggedIn$ = this.store$.select(fromStore.selectProfileLoggedIn);
+
+    this.store$.select(fromStore.selectQuestionById(this.questionId)).subscribe(question => this.questionAnswersCount = question.answer_count)
 
     this.userAnswer$ = this.store$.select(fromStore.selectUserAnswer);
     this.questionAnswered$ = this.store$.select(fromStore.selectQuestionAnswered);
 
-    this.store$.select(fromStore.selectAnswersTotal).subscribe(count => this.questionAnswersCount = count);
-    this.store$.select(fromStore.selectProfileFirstName).subscribe(name => this.author = name);
-    this.store$.select(fromStore.selectProfileAnswerCount).subscribe(count => this.authorAnswersCount = count);
+    this.store$.select(fromStore.selectProfileInfo).subscribe(profile => this.profile = profile);
     this.store$.select(fromStore.selectProfileId).subscribe(id => {
-      this.authorId = id;
-      if(this.authorId)
-        this.store$.dispatch(new fromActions.LoadUserAnswer({ userId: this.authorId, questionId: this.questionId })); 
+      if(id)
+        this.store$.dispatch(new fromActions.LoadUserAnswer({ userId: id, questionId: this.questionId })); 
     });
   }
 
   addAnswer(body){
     const answer = {
-      author : this.author,
-      authorId : this.authorId,
+      author : this.profile.first_name,
+      authorId : this.profile.id,
       body: body,
       upvotes: 0,
       downvotes: 0,
@@ -65,7 +66,7 @@ export class QuestionInfoComponent implements OnInit {
     
     this.store$.dispatch(new fromActions.AddAnswer(answer))
     this.store$.dispatch(new fromActions.UpdateQuestion({ id: answer.questionId, answer_count: this.questionAnswersCount + 1 }))
-    this.store$.dispatch(new fromActions.UpdateUser({ id: this.authorId, answer_count: this.authorAnswersCount + 1 }))
+    this.store$.dispatch(new fromActions.UpdateUser({ id: this.profile.id, answer_count: this.profile.answer_count + 1 }))
   }
 
   editAnswer(body){
@@ -82,8 +83,9 @@ export class QuestionInfoComponent implements OnInit {
 
   deleteAnswer(id){
     this.store$.dispatch(new fromActions.DeleteAnswer(id))
+    console.log('answer count ', this.questionAnswersCount)
     this.store$.dispatch(new fromActions.UpdateQuestion({ id: this.questionId, answer_count: this.questionAnswersCount - 1 }))
-    this.store$.dispatch(new fromActions.UpdateUser({ id: this.authorId, answer_count: this.authorAnswersCount - 1 }))
+    this.store$.dispatch(new fromActions.UpdateUser({ id: this.profile.id, answer_count: this.profile.answer_count - 1 }))
   }
 
 }
