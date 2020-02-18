@@ -56,7 +56,6 @@ export function reducer(
       }
   
       case fromProfile.LOGIN_FAIL: {
-        console.log('login fail')
         return {
           ...state,
           loggingIn: false,

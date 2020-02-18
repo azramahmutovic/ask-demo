@@ -411,6 +411,15 @@
       "last_name": "Z",
       "answer_count": 0,
       "id": 3
+    },
+    {
+      "email": "ivan@gmail.com",
+      "password": "password",
+      "first_name": "Ivan",
+      "last_name": "Ivanovic",
+      "answer_count": 0,
+      "question_count": 0,
+      "id": 4
     }
   ]
 }

@@ -24,9 +24,9 @@ export class ProfileEffects {
         return this.apiService.postUser(action.payload)
             .pipe(
                 map(response => {
-                    localStorage.setItem('currentUser', JSON.stringify(response[0]));
+                    localStorage.setItem('currentUser', JSON.stringify(response));
                     this.router.navigate(['/']);
-                    return new profileActions.SignupSuccess(response[0] as any);
+                    return new profileActions.SignupSuccess(response as any);
                 }),
                 catchError(error => of(new profileActions.SignupFail())),
             );
@@ -55,6 +55,8 @@ export class ProfileEffects {
                         return new profileActions.LoginSuccess(response[0] as any);
                     }
                     else{
+                        localStorage.removeItem('currentUser');
+                        this.router.navigate(['/login']);
                         return new profileActions.LoginFail();
                     }
                     

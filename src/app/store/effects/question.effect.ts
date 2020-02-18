@@ -127,11 +127,26 @@ export class QuestionEffects {
         return this.apiService.getQuestionCount()
             .pipe(
                 map(response => {
-                    return new questionActions.GetQuestionCountSuccess( (response as any).questions);
+                    const questionCount =  (response as any).questions;
+                    return new questionActions.GetQuestionCountSuccess(questionCount);
                 }),
                 catchError(error => of(new questionActions.GetQuestionCountFail())),
             );
         }),
     );
+
+    @Effect({ dispatch: false })
+	updateQuestionCount$ = this.actions$.pipe(
+        ofType<questionActions.UpdateQuestionCount>(questionActions.UPDATE_QUESTION_COUNT),
+        mergeMap(action => {
+            return this.apiService.updateQuestionCount(action.payload)
+                .pipe(
+                    map(response => {
+                        return new questionActions.UpdateQuestionCountSuccess(action.payload);
+                    }),
+                    catchError(error => of(new questionActions.UpdateQuestionCountFail())),
+                );
+            }),
+    )
 
 }

@@ -53,6 +53,7 @@ export class HomeComponent implements OnInit {
     }
     this.store$.dispatch(new fromActions.AddQuestion(question))
     this.store$.dispatch(new fromActions.UpdateUser({ id: this.profile.id, question_count: this.profile.question_count + 1 }))
+    this.store$.dispatch(new fromActions.UpdateQuestionCount(this.questionCount + 1))
   }
 
   upvoteQuestion({ id, upvotes }){

@@ -17,7 +17,6 @@ export class AppComponent {
 
   ngOnInit(): void {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'))
-    console.log('current user ', currentUser)
     if(currentUser)
       this.store$.dispatch(new fromActions.Login({ email: currentUser.email, password: currentUser.password}))
   }

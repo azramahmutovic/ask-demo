@@ -120,5 +120,11 @@ export class ApiService {
       .pipe(catchError((error: any) => Observable.throw(error)));
   }
 
+  updateQuestionCount(count){
+    return this.http
+      .patch(API + `/count`, { questions: count })
+      .pipe(catchError((error: any) => Observable.throw(error)));
+  }
+
 
 }

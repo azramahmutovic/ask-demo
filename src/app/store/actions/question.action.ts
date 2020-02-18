@@ -25,7 +25,9 @@ export const LOAD_MORE_QUESTIONS_FAIL = 'LOAD_MORE_QUESTIONS_FAIL';
 export const GET_QUESTION_COUNT = 'GET_QUESTION_COUNT';
 export const GET_QUESTION_COUNT_SUCCESS = 'GET_QUESTION_COUNT_SUCCESS';
 export const GET_QUESTION_COUNT_FAIL = 'GET_QUESTION_COUNT_FAIL';
-
+export const UPDATE_QUESTION_COUNT = 'UPDATE_QUESTION_COUNT';
+export const UPDATE_QUESTION_COUNT_SUCCESS = 'UPDATE_QUESTION_COUNT_SUCCESS';
+export const UPDATE_QUESTION_COUNT_FAIL = 'UPDATE_QUESTION_COUNT_FAIL';
 export class AddQuestion implements Action {
   readonly type = ADD_QUESTION;
 
@@ -158,6 +160,21 @@ export class GetQuestionCountFail implements Action {
   constructor() {}
 }
 
+export class UpdateQuestionCount implements Action {
+  readonly type = UPDATE_QUESTION_COUNT;
+  constructor(public payload: number) {}
+}
+
+export class UpdateQuestionCountSuccess implements Action {
+  readonly type = UPDATE_QUESTION_COUNT_SUCCESS;
+  constructor(public payload: number) {}
+}
+
+export class UpdateQuestionCountFail implements Action {
+  readonly type = UPDATE_QUESTION_COUNT_FAIL;
+  constructor() {}
+}
+
 
 export type QuestionActions = 
   AddQuestion |
@@ -183,4 +200,7 @@ export type QuestionActions =
   LoadQuestionsFail |
   GetQuestionCount |
   GetQuestionCountSuccess |
-  GetQuestionCountFail;
+  GetQuestionCountFail |
+  UpdateQuestionCount|
+  UpdateQuestionCountSuccess |
+  UpdateQuestionCountFail;
