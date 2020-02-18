@@ -289,7 +289,7 @@
       "body": "People who pile on generic YouTube comments like “Who’s watching in 2019”, why do you do this?",
       "upvotes": 1,
       "downvotes": 0,
-      "answer_count": 1,
+      "answer_count": 0,
       "created_at": 1581902129,
       "id": 38
     },
@@ -299,7 +299,7 @@
       "body": "Iceland just announced that every Icelander over the age of 18 automatically become organ donors with ability to opt out. How do you feel about this?",
       "upvotes": 2,
       "downvotes": 0,
-      "answer_count": 2,
+      "answer_count": 1,
       "created_at": 1581944705,
       "id": 42
     },
@@ -309,7 +309,7 @@
       "body": "You can add one inch to anything that exists. How do you cause the most chaos?",
       "upvotes": 1,
       "downvotes": 0,
-      "answer_count": 2,
+      "answer_count": 1,
       "created_at": 1582028141,
       "id": 43
     }
@@ -383,46 +383,6 @@
       "created_at": 1582032916,
       "questionId": 43,
       "id": 7
-    },
-    {
-      "author": "Nejla",
-      "authorId": 5,
-      "body": "I don't know, I disappeared...",
-      "upvotes": 1,
-      "downvotes": 0,
-      "created_at": 1582037891,
-      "questionId": 44,
-      "id": 8
-    },
-    {
-      "author": "Nejla",
-      "authorId": 5,
-      "body": "eke",
-      "upvotes": 0,
-      "downvotes": 0,
-      "created_at": 1582039520,
-      "questionId": 43,
-      "id": 9
-    },
-    {
-      "author": "Nejla",
-      "authorId": 5,
-      "body": "answer",
-      "upvotes": 0,
-      "downvotes": 0,
-      "created_at": 1582039544,
-      "questionId": 38,
-      "id": 10
-    },
-    {
-      "author": "Nejla",
-      "authorId": 5,
-      "body": "blablab",
-      "upvotes": 0,
-      "downvotes": 0,
-      "created_at": 1582039971,
-      "questionId": 42,
-      "id": 11
     }
   ],
   "users": [
@@ -466,7 +426,7 @@
       "password": "12345",
       "first_name": "Nejla",
       "last_name": "M",
-      "answer_count": 4,
+      "answer_count": 1,
       "question_count": 26,
       "id": 5
     }
