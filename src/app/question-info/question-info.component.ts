@@ -25,6 +25,7 @@ export class QuestionInfoComponent implements OnInit {
   questionAnswered$: Observable<boolean>;
   userAnswer$: Observable<Answer>;
   questionAnswersCount : number;
+  questionAuthorId: number;
   profile: Profile;
   
 
@@ -41,7 +42,10 @@ export class QuestionInfoComponent implements OnInit {
     this.answersLoading$ = this.store$.select(fromStore.selectAnswerLoading);
     this.loggedIn$ = this.store$.select(fromStore.selectProfileLoggedIn);
 
-    this.store$.select(fromStore.selectQuestionById(this.questionId)).subscribe(question => this.questionAnswersCount = question.answer_count)
+    this.store$.select(fromStore.selectQuestionById(this.questionId)).subscribe(question => { 
+      this.questionAnswersCount = question.answer_count 
+      this.questionAuthorId = question.authorId;
+    })
 
     this.userAnswer$ = this.store$.select(fromStore.selectUserAnswer);
     this.questionAnswered$ = this.store$.select(fromStore.selectQuestionAnswered);
@@ -64,9 +68,19 @@ export class QuestionInfoComponent implements OnInit {
       questionId: (this.questionId as any)
     }
     
+    const notification = {
+      userId : this.questionAuthorId,
+      questionId: this.questionId,
+      answer_author: this.profile.first_name,
+      created_at : Math.floor(Date.now() /1000),
+      opened: false
+    }
+
     this.store$.dispatch(new fromActions.AddAnswer(answer))
     this.store$.dispatch(new fromActions.UpdateQuestion({ id: answer.questionId, answer_count: this.questionAnswersCount + 1 }))
     this.store$.dispatch(new fromActions.UpdateUser({ id: this.profile.id, answer_count: this.profile.answer_count + 1 }))
+    this.store$.dispatch(new fromActions.SendNotification(notification))
+    
   }
 
   editAnswer(body){
@@ -83,7 +97,6 @@ export class QuestionInfoComponent implements OnInit {
 
   deleteAnswer(id){
     this.store$.dispatch(new fromActions.DeleteAnswer(id))
-    console.log('answer count ', this.questionAnswersCount)
     this.store$.dispatch(new fromActions.UpdateQuestion({ id: this.questionId, answer_count: this.questionAnswersCount - 1 }))
     this.store$.dispatch(new fromActions.UpdateUser({ id: this.profile.id, answer_count: this.profile.answer_count - 1 }))
   }

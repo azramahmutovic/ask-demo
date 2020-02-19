@@ -126,5 +126,23 @@ export class ApiService {
       .pipe(catchError((error: any) => Observable.throw(error)));
   }
 
+  sendNotification(notification){
+    return this.http
+      .post(API + '/notifications', notification)
+      .pipe(catchError((error: any) => Observable.throw(error)));
+  }
+
+  openNotification(notificationId){
+    return this.http
+      .patch(API + `/notifications/${notificationId}`, { opened: true })
+      .pipe(catchError((error: any) => Observable.throw(error)));
+  }
+
+  loadNotifications(userId){
+    return this.http
+      .get(API + `/notifications?userId=${userId}&_page=1&_limit=20`)
+      .pipe(catchError((error: any) => Observable.throw(error)));
+  }
+
 
 }

@@ -14,5 +14,9 @@
     "/api/count": {
         "target": "http://localhost:3000",
         "secure": false
+    },
+    "/api/notifications": {
+        "target": "http://localhost:3000",
+        "secure": false
     }
 }

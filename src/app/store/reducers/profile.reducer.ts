@@ -1,5 +1,6 @@
 import * as fromProfile from '../actions/profile.action';
-import { Question } from 'src/app/models/question.model';
+import { Question } from '../../models/question.model';
+import { Notif } from '../../models/notif.model';
 
 export interface State {
   id: number;
@@ -14,6 +15,8 @@ export interface State {
   myQuestionEntities: { [id: string]: Question };
   myQuestionIds: number[];
   myQuestionPage: number;
+  notificationEntities: { [id: string]: Notif };
+  notificationIds: number[];
 }
 
 export const initialState: State = {
@@ -28,7 +31,9 @@ export const initialState: State = {
   loginFail: false,
   myQuestionEntities: {},
   myQuestionIds: [],
-  myQuestionPage : 1
+  myQuestionPage : 1,
+  notificationEntities: {},
+  notificationIds: [],
 };
 
 export function reducer(
@@ -44,25 +49,25 @@ export function reducer(
         };
       }
   
-      case fromProfile.LOGIN_SUCCESS: {
-        const user = action.payload;
-        return {
-          ...state,
-          ...user,
-          loggingIn: false,
-          loggedIn: true,
-          loginFail: false
-        };
-      }
+    case fromProfile.LOGIN_SUCCESS: {
+      const user = action.payload;
+      return {
+        ...state,
+        ...user,
+        loggingIn: false,
+        loggedIn: true,
+        loginFail: false
+      };
+    }
   
-      case fromProfile.LOGIN_FAIL: {
-        return {
-          ...state,
-          loggingIn: false,
-          loggedIn: false,
-          loginFail: true
-        };
-      }
+    case fromProfile.LOGIN_FAIL: {
+      return {
+        ...state,
+        loggingIn: false,
+        loggedIn: false,
+        loginFail: true
+      };
+    }
 
     case fromProfile.SIGNUP: {
       return {
@@ -132,9 +137,45 @@ export function reducer(
       };
     }
 
-  }
+    case fromProfile.LOAD_NOTIFICATIONS_SUCCESS: {
+        
+      const notifications = action.payload;
+      const notificationIds = notifications.map(notification => notification.id);
+      
+      const notificationEntities = notifications.reduce(
+        (entities: { [id: string]: Notif }, notification: Notif) => {
+          return {
+            ...entities,
+            [notification.id]: notification,
+          };
+        },
+        {
+          ...state.notificationEntities,
+        }
+      );
 
-  
+      return {
+        ...state,
+        notificationIds,
+        notificationEntities,
+      };
+    }
+
+    case fromProfile.OPEN_NOTIFICATION_SUCCESS: {
+
+      const id = action.payload;
+      const notificationEntities = {
+        ...state.notificationEntities,
+        [id] : { ...state.notificationEntities[id], opened: true }
+      }
+
+      return {
+        ...state,
+        notificationEntities
+      }
+    }
+
+  }
 
   return state;
 }
@@ -151,3 +192,5 @@ export const selectMyQuestionEntities = (state: State) => state.myQuestionEntiti
 export const selectMyQuestionIds = (state: State) => state.myQuestionIds;
 export const selectMyQuestionPage = (state: State) => state.myQuestionPage;
 export const selectMyQuestionCount = (state: State) => state.question_count;
+export const selectMyNotificationEntities = (state: State) => state.notificationEntities;
+export const selectMyNotificationIds = (state: State) => state.notificationIds;

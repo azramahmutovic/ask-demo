@@ -94,5 +94,47 @@ export class ProfileEffects {
         }),
     );
 
+    @Effect()
+	sendNotification$ = this.actions$.pipe(
+        ofType<profileActions.SendNotification>(profileActions.SEND_NOTIFICATION),
+        mergeMap(action => {
+        return this.apiService.sendNotification(action.payload)
+            .pipe(
+                map(response => {
+                    return new profileActions.SendNotificationSuccess();
+                }),
+                catchError(error => of(new profileActions.SendNotificationFail())),
+            );
+        })
+    )
+
+    @Effect()
+	openNotification$ = this.actions$.pipe(
+        ofType<profileActions.OpenNotification>(profileActions.OPEN_NOTIFICATION),
+        mergeMap(action => {
+        return this.apiService.openNotification(action.payload)
+            .pipe(
+                map(response => {
+                    return new profileActions.OpenNotificationSuccess(action.payload);
+                }),
+                catchError(error => of(new profileActions.OpenNotificationFail())),
+            );
+        })
+    )
+
+    @Effect()
+    loadNotifications$ = this.actions$.pipe(
+        ofType<profileActions.LoadNotifications>(profileActions.LOAD_NOTIFICATIONS),
+        mergeMap(action => {
+        return this.apiService.loadNotifications(action.payload)
+            .pipe(
+                map(response => {
+                    return new profileActions.LoadNotificationsSuccess( (response as any));
+                }),
+                catchError(error => of(new profileActions.LoadNotificationsFail())),
+            );
+        }),
+    );
+
 
 }

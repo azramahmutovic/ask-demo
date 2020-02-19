@@ -55,7 +55,6 @@ export class EditAnswerInputComponent implements OnInit {
   }
 
   delete(){
-    console.log('delete emit')
     this.deleteAnswer.emit(this.answer.id)
   }
 

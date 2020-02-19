@@ -80,3 +80,25 @@ export const selectProfileInfo = createSelector(
         return{ id, first_name, last_name, email, answer_count, question_count }
     }  
 );
+
+export const selectMyNotificationEntities = createSelector(
+    getProfileState,
+    fromProfile.selectMyNotificationEntities
+);
+  
+export const selectMyNotificationIds = createSelector(
+    getProfileState,
+    fromProfile.selectMyNotificationIds
+);
+  
+export const selectMyNotifications = createSelector(
+    selectMyNotificationEntities, 
+    selectMyNotificationIds,
+    (entities, ids) => ids.map(id => entities[id])
+);
+
+export const selectUnreadNotifications = createSelector(
+    selectMyNotificationEntities, 
+    selectMyNotificationIds,
+    (entities, ids) => ids.map(id => entities[id]).filter(notification => !notification.opened).length
+);

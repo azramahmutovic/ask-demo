@@ -16,6 +16,7 @@ import { AnswerItemComponent } from './answer-item/answer-item.component';
 import { VotesComponent } from './votes/votes.component';
 import { EditAnswerInputComponent } from './edit-answer-input/edit-answer-input.component';
 import { DeleteAnswerModalComponent } from './delete-answer-modal/delete-answer-modal.component';
+import { NotificationsListComponent } from './notifications-list/notifications-list.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { DeleteAnswerModalComponent } from './delete-answer-modal/delete-answer-
     VotesComponent,
     EditAnswerInputComponent,
     DeleteAnswerModalComponent,
+    NotificationsListComponent,
     
   ],
   imports: [
@@ -54,7 +56,8 @@ import { DeleteAnswerModalComponent } from './delete-answer-modal/delete-answer-
     TabsComponent,
     UserCardComponent,
     AnswerItemComponent,
-    EditAnswerInputComponent
+    EditAnswerInputComponent,
+    NotificationsListComponent
   ]
 })
 export class SharedModule { }

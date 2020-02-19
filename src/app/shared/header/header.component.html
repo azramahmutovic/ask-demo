@@ -9,8 +9,8 @@
         <button [routerLink]="'/signup'" class="btn btn-inverse">Signup</button>
     </div>
     <div *ngIf="(loggedIn$ | async)" class="header-actions">
-        <a href="..." class="nav-link nav-icon" aria-label="settings">
-            <clr-icon shape="bell"></clr-icon>
+        <a (click)="notificationsList = !notificationsList" class="nav-link nav-icon" aria-label="settings">
+            <clr-icon shape="bell" [class.has-badge]="(alert$ | async) > 0"></clr-icon>
         </a>
         <clr-dropdown>
             <button class="nav-icon" clrDropdownTrigger aria-label="toggle settings menu">
@@ -25,3 +25,7 @@
         </clr-dropdown>
     </div>
 </header>
+<app-notifications-list 
+    [opened]="notificationsList" 
+    [notifications]="(notifications$ | async)"
+    (openNotification)="openNotification($event)"></app-notifications-list>
