@@ -1,6 +1,6 @@
 {
   "count": {
-    "questions": 32
+    "questions": 33
   },
   "questions": [
     {
@@ -312,6 +312,16 @@
       "answer_count": 2,
       "created_at": 1582028141,
       "id": 43
+    },
+    {
+      "author": "Edo",
+      "authorId": 2,
+      "body": "What is the most stupid rule you've ever seen?",
+      "upvotes": 0,
+      "downvotes": 0,
+      "answer_count": 0,
+      "created_at": 1582071316,
+      "id": 44
     }
   ],
   "answers": [
@@ -412,7 +422,7 @@
       "last_name": "H",
       "id": 2,
       "answer_count": 3,
-      "question_count": 1
+      "question_count": 2
     },
     {
       "email": "marina@gmail.com",
@@ -468,6 +478,14 @@
       "created_at": 1582070933,
       "opened": true,
       "id": 2
+    },
+    {
+      "userId": 2,
+      "questionId": 44,
+      "answer_author": "Edo",
+      "created_at": 1582071557,
+      "opened": true,
+      "id": 3
     }
   ]
 }

@@ -140,7 +140,7 @@ export class ApiService {
 
   loadNotifications(userId){
     return this.http
-      .get(API + `/notifications?userId=${userId}&_page=1&_limit=20`)
+      .get(API + `/notifications?userId=${userId}&_sort=created_at&_order=desc&_page=1&_limit=20`)
       .pipe(catchError((error: any) => Observable.throw(error)));
   }
 
