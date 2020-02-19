@@ -23,7 +23,7 @@ export class QuestionItemComponent implements OnInit {
   }
 
   goToQuestionInfo(){
-    this.router.navigate(['question', this.question.id]);
+    this.router.navigate(['/question', this.question.id]);
   }
 
   upvote(upvotes){

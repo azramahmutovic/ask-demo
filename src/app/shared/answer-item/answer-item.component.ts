@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { timeDifference } from '../../utils/time-diff';
 
 @Component({
   selector: 'app-answer-item',
   templateUrl: './answer-item.component.html',
-  styleUrls: ['./answer-item.component.scss']
+  styleUrls: ['./answer-item.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AnswerItemComponent implements OnInit {
 

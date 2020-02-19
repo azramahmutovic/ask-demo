@@ -38,7 +38,7 @@ export class ProfileEffects {
         ofType<profileActions.LogOut>(profileActions.LOGOUT),
         map(() => {
             localStorage.removeItem('currentUser');
-            this.router.navigate(['login']);
+            this.router.navigate(['/login']);
         })
     )
     

@@ -69,7 +69,7 @@
       "body": "What movie never should be remade?",
       "upvotes": 27,
       "downvotes": 0,
-      "answer_count": 2,
+      "answer_count": null,
       "created_at": 1581879902,
       "id": 16
     },
@@ -307,7 +307,7 @@
       "author": "Edo",
       "authorId": 2,
       "body": "You can add one inch to anything that exists. How do you cause the most chaos?",
-      "upvotes": 1,
+      "upvotes": 2,
       "downvotes": 0,
       "answer_count": 2,
       "created_at": 1582028141,
@@ -385,24 +385,24 @@
       "id": 6
     },
     {
+      "author": "Nadir",
+      "authorId": 6,
+      "body": "Add one inch to every credit card so it can't fit in the slot.",
+      "upvotes": 1,
+      "downvotes": 1,
+      "created_at": 1582070933,
+      "questionId": 43,
+      "id": 8
+    },
+    {
       "author": "Edo",
       "authorId": 2,
       "body": "Add one inch to only one leg on every chair",
       "upvotes": 0,
       "downvotes": 0,
-      "created_at": 1582032916,
+      "created_at": 1582072770,
       "questionId": 43,
-      "id": 7
-    },
-    {
-      "author": "Nadir",
-      "authorId": 6,
-      "body": "Add one inch to every credit card so it can't fit in the slot.",
-      "upvotes": 0,
-      "downvotes": 0,
-      "created_at": 1582070933,
-      "questionId": 43,
-      "id": 8
+      "id": 9
     }
   ],
   "users": [
@@ -486,6 +486,93 @@
       "created_at": 1582071557,
       "opened": true,
       "id": 3
+    },
+    {
+      "userId": 2,
+      "questionId": 44,
+      "answer_author": "Edo",
+      "created_at": 1582072440,
+      "opened": true,
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "questionId": 44,
+      "answer_author": "Edo",
+      "created_at": 1582072618,
+      "opened": true,
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "questionId": 43,
+      "answer_author": "Edo",
+      "created_at": 1582072751,
+      "opened": true,
+      "id": 6
+    },
+    {
+      "userId": 2,
+      "questionId": 43,
+      "answer_author": "Edo",
+      "created_at": 1582072770,
+      "opened": true,
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "questionId": 44,
+      "answer_author": "Edo",
+      "created_at": 1582072779,
+      "opened": true,
+      "id": 8
+    },
+    {
+      "questionId": 16,
+      "answer_author": "Edo",
+      "created_at": 1582072791,
+      "opened": false,
+      "id": 9
+    },
+    {
+      "userId": 2,
+      "questionId": 44,
+      "answer_author": "azra",
+      "created_at": 1582072863,
+      "opened": false,
+      "id": 10
+    },
+    {
+      "userId": 2,
+      "questionId": 43,
+      "answer_author": "azra",
+      "created_at": 1582072874,
+      "opened": false,
+      "id": 11
+    },
+    {
+      "userId": 2,
+      "questionId": 42,
+      "answer_author": "azra",
+      "created_at": 1582072884,
+      "opened": false,
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "questionId": 37,
+      "answer_author": "azra",
+      "created_at": 1582072893,
+      "opened": true,
+      "id": 13
+    },
+    {
+      "userId": 2,
+      "questionId": 44,
+      "answer_author": "azra",
+      "created_at": 1582073261,
+      "opened": false,
+      "id": 14
     }
   ]
 }
