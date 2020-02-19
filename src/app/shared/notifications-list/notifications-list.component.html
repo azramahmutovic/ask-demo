@@ -1,6 +1,6 @@
 <div [hidden]="!opened" class="notification-list">
     <div class="card">
-      <div *ngFor="let notification of notifications" class="card-block">
+      <div *ngFor="let notification of notifications" class="card-block" [class.unread]="!notification.opened">
         <div class="card-text">
             New answer from {{ notification.answer_author }} on your <a (click)="clickNotification(notification)">question</a>.
             <div class="p7">{{ timeDifference(notification.created_at) }}</div>
