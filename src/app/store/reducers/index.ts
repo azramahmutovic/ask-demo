@@ -1,5 +1,5 @@
-import {ActionReducerMap, combineReducers} from '@ngrx/store';
-import {InjectionToken} from '@angular/core';
+import { ActionReducerMap } from '@ngrx/store';
+import { InjectionToken } from '@angular/core';
 
 import * as fromQuestions from './question.reducer';
 import * as fromAnswers from './answer.reducer';
@@ -22,8 +22,6 @@ export const reducers: ActionReducerMap<State> = {
   hot_questions: fromHotQuestions.reducer,
   community: fromCommunity.reducer
 };
-
-// export const combinedReducers = combineReducers(reducers);
 
 export const reducerToken = new InjectionToken<ActionReducerMap<State>>('Reducers');
 
